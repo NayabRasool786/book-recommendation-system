@@ -1,0 +1,295 @@
+/* frontend_web/style.css */
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Vibrant gradient background */
+    color: #2c3e50; /* Darker text for contrast */
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    /* --- NEW, THEMED BACKGROUND IMAGE --- */
+    background-image: url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* A beautiful, large library */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* --- END NEW BACKGROUND IMAGE --- */
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Overlay for text readability on background image */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* White overlay for readability */
+    mix-blend-mode: overlay; /* Blends with gradient */
+    z-index: -1;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px; /* Added padding for overall content */
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for content */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* More pronounced shadow */
+    text-align: center;
+    z-index: 1; /* Ensure container is above background */
+}
+
+/* Header */
+header h1 {
+    color: #2980b9; /* A vibrant blue */
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+header p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Search Container */
+.search-container {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    justify-content: center;
+    gap: 15px; /* Increased gap */
+}
+#book-input {
+    flex-grow: 1; /* Allows input to take available space */
+    max-width: 500px; /* Limit max width for input */
+    padding: 14px 18px; /* Larger padding */
+    border: 1px solid #aeb6bf; /* Softer border */
+    border-radius: 25px; /* Rounded input */
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+#book-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+#search-btn {
+    padding: 14px 25px; /* Larger padding */
+    border: none;
+    background-color: #3498db; /* Vibrant blue */
+    color: white;
+    border-radius: 25px; /* Rounded button */
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+#search-btn:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Message Area */
+#message-area {
+    margin: 25px 0;
+    font-size: 1.2em;
+    color: #e74c3c; /* Error red */
+    font-weight: bold;
+}
+
+/* Recommendations Grid */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Larger min width for cards */
+    gap: 30px; /* Increased gap */
+    margin-top: 40px;
+}
+.book-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1); /* Softer shadow */
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+.book-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.book-card h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    line-height: 1.4;
+    color: #2c3e50;
+}
+.book-card .author {
+    font-size: 1em;
+    color: #7f8c8d;
+    margin-bottom: 10px;
+}
+.book-card .genres {
+    font-size: 0.9em;
+    color: #3498db; /* Blue for genres */
+    margin-bottom: 15px;
+    font-style: italic;
+}
+.book-card .book-stats {
+    font-size: 0.95em;
+    color: #555;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #ecf0f1; /* Light border */
+}
+.book-card .url-link {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    background-color: #2ecc71; /* Green for link */
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 20px; /* Rounded link button */
+    transition: background-color 0.3s ease;
+}
+.book-card .url-link:hover {
+    background-color: #27ae60;
+}
+
+/* Insights Section */
+/* --- CORRECTED Styles for Insights Section --- */
+.insights-section {
+    margin-top: 60px;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.insights-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #2980b9;
+    font-size: 2em;
+}
+.insights-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 30px;
+    align-items: stretch; /* Make cards in the same row equal height */
+}
+.insight-card, .insight-card-large {
+    background: #fdfefe;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    min-width: 0; /* Prevents content from overflowing the grid */
+}
+.insight-card-large {
+    grid-column: 1 / -1; /* Make this card span both columns */
+}
+.insight-card h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #34495e;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+/* This specifically contains the chart to prevent overflow */
+.insight-card canvas, .insight-card-large canvas {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+.insight-card ol {
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+}
+.insight-card ol li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eceff1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align items */
+    gap: 15px; /* Add space between text and rating */
+    font-size: 0.95em;
+    color: #555;
+    word-break: break-word; /* Allow long author names to wrap */
+}
+.insight-card ol li:last-child {
+    border-bottom: none;
+}
+.insight-card ol li span {
+    color: #2980b9;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent the rating number from wrapping */
+    text-align: right;
+}
+
+/* --- Mobile Responsiveness (Media Queries) --- */
+/* Inside @media (max-width: 992px) */
+
+.insights-grid {
+    grid-template-columns: 1fr; /* Stack insights vertically on tablets */
+}
+.insight-card-large {
+    grid-column: auto; /* Reset column span for stacking */
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px;
+    }
+    header h1 {
+        font-size: 1.8em;
+    }
+    header p {
+        font-size: 1em;
+    }
+    .search-container {
+        flex-direction: column; /* Stack search input and button */
+        gap: 10px;
+    }
+    #book-input, #search-btn {
+        max-width: 100%; /* Full width for input and button */
+    }
+    .recommendations-grid {
+        grid-template-columns: 1fr; /* Single column for recommendations */
+        gap: 20px;
+    }
+    .book-card {
+        padding: 15px;
+    }
+    .book-card h3 {
+        font-size: 1.1em;
+    }
+    .book-card .author, .book-card .genres, .book-card .book-stats {
+        font-size: 0.9em;
+    }
+    .insights-section {
+        padding: 20px;
+    }
+    .insights-section h2 {
+        font-size: 1.8em;
+    }
+    .insight-card, .insight-card-large {
+        padding: 18px;
+    }
+}

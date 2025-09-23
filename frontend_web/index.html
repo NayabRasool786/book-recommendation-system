@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Book Analytics</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📖 Advanced Book Analytics Dashboard</h1>
+            <p>Discover your next favorite book and explore literary trends.</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="book-input" placeholder="Enter a book you love..." list="book-titles">
+            <datalist id="book-titles"></datalist>
+            <button id="search-btn">Find Similar Books</button>
+        </div>
+
+        <div id="message-area"></div>
+        <div id="recommendations-container" class="recommendations-grid"></div>
+
+        <div class="insights-section">
+            <h2>Literary Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card-large">
+                    <h3>🔥 Top Genres</h3>
+                    <canvas id="genre-chart"></canvas>
+                </div>
+                <div class="insight-card">
+                    <h3>📊 Rating Distribution</h3>
+                    <canvas id="rating-chart"></canvas>
+                </div>
+                <div class="insight-card">
+                    <h3>⭐ Most Popular Authors</h3>
+                    <ol id="top-authors-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

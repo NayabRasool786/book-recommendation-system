@@ -1,0 +1,6 @@
+# backend_api/requirements.txt
+Flask
+Flask-Cors
+pandas
+scikit-learn
+gunicorn
